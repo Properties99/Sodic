@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SODIC OGAMI Community</title>
+    <link rel="stylesheet" href="property-styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const typeSelect = document.getElementById('type');
+            const detailsDiv = document.getElementById('details');
+            
+            const propertyDetails = {
+                'SHORELINE MANSION': '6BDS / AVG:BUA 1,000 M2 / AVG:2,450 M2<br>STARTING PRICE 400 M Over 8 Yrs Private Pool EOI $10,000$ or EG 500K',
+                'BEACHSIDE': '5BDs / AVG BUA: 490 M2 / AVG LAND: 900 M2<br>STARTING PRICE 155 M Over 8 Yrs Private Pool EOI $10,000$ or EG 500K',
+                'SEASCAPE Villa': '4BDS / AVG:BUA 350 M2 / AVG Land: 750 M2<br>STARTING PRICE 135 M Over 8 Yrs Private Pool EOI $10,000$ or EG 500K',
+                'DUSK Villa': '4BDS / AVG:BUA 310 M2 / AVG Land: 400 M2<br>STARTING PRICE 58 M Over 8 Yrs Private Pool EOI $10,000$ or EG 500K',
+                'BAYVIEW Villa': '3BDS / AVG:BUA 250 M2 / AVG Land: 340 M2<br>STARTING PRICE 48 M Over 8 Yrs Private Pool EOI $10,000$ or EG 500K',
+                'RAYS Twin Villa': '4BDS / AVG:BUA 265 M2 / AVG Land: 290 M2<br>STARTING PRICE 40 M Over 8 Yrs EOI $10,000$ or EG 500K',
+                'SUNSET Townhome': '3BDS / AVG:BUA 223 M2 / AVG Land: 190 M2<br>STARTING PRICE 30 M Over 8 Yrs EOI $10,000$ or EG 500K'
+            };
+
+            typeSelect.addEventListener('change', function() {
+                const selectedType = typeSelect.value;
+
+                if (selectedType) {
+                    detailsDiv.innerHTML = propertyDetails[selectedType];
+                } else {
+                    detailsDiv.innerHTML = '';
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>SODIC OGAMI Community</h1>
+        <form id="propertyForm">
+            <label for="type">Select a Type:</label>
+            <select id="type" required>
+                <option value="">--Choose a type--</option>
+                <option value="SHORELINE MANSION">SHORELINE MANSION</option>
+                <option value="BEACHSIDE">BEACHSIDE</option>
+                <option value="SEASCAPE Villa">SEASCAPE Villa</option>
+                <option value="DUSK Villa">DUSK Villa</option>
+                <option value="BAYVIEW Villa">BAYVIEW Villa</option>
+                <option value="RAYS Twin Villa">RAYS Twin Villa</option>
+                <option value="SUNSET Townhome">SUNSET Townhome</option>
+            </select>
+
+            <label for="details">Details:</label>
+            <div id="details"></div>
+        </form>
+    </div>
+</body>
+</html>
